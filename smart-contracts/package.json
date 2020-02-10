@@ -1,0 +1,16 @@
+{
+  "name": "graceful-unwinding",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "compile": "truffle compile",
+    "kovan": "truffle console --network kovan",
+    "mainnet": "truffle console --network mainnet",
+    "migrate-kovan": "truffle migrate --reset --network kovan",
+    "migrate-mainnet": "truffle migrate --network mainnet"
+  },
+  "dependencies": {
+    "truffle": "^5.1.4",
+    "truffle-hdwallet-provider": "^1.0.17"
+  }
+}
