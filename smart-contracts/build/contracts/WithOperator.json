@@ -46,15 +46,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"LogNewOperator\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newOperator\",\"type\":\"address\"}],\"name\":\"changeOperator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"operator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/ka/Projects/Altoros/graceful-unwind/smart-contracts/contracts/WithOperator.sol\":\"WithOperator\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ka/Projects/Altoros/graceful-unwind/smart-contracts/contracts/WithOperator.sol\":{\"keccak256\":\"0xb51a0050f2372b4abe2849fe80f2579cdac21a89caa016c95aff585dde7faf05\",\"urls\":[\"bzz-raw://7ddb2157b7fad0fae747523d0cf4bb3a3ab3d397cc204058fea7e000c3834070\",\"dweb:/ipfs/QmcDrM2igLQiiTYBRwC5k8h1hR7mudQrgoS2LZuWZUqzs6\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"LogNewOperator\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newOperator\",\"type\":\"address\"}],\"name\":\"changeOperator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"operator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/ka/Projects/Altoros/VaultGracefulUnwinding/smart-contracts/contracts/WithOperator.sol\":\"WithOperator\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/ka/Projects/Altoros/VaultGracefulUnwinding/smart-contracts/contracts/WithOperator.sol\":{\"keccak256\":\"0xb51a0050f2372b4abe2849fe80f2579cdac21a89caa016c95aff585dde7faf05\",\"urls\":[\"bzz-raw://7ddb2157b7fad0fae747523d0cf4bb3a3ab3d397cc204058fea7e000c3834070\",\"dweb:/ipfs/QmcDrM2igLQiiTYBRwC5k8h1hR7mudQrgoS2LZuWZUqzs6\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity 0.6.2;\n\ncontract WithOperator {\n    event LogNewOperator(address operator);\n\n    address public operator;\n\n    modifier onlyOperator() {\n        require(msg.sender == operator, \"ERROR::ACCESS_DENIED\");\n        _;\n    }\n\n    constructor() internal {\n        _setOperator(msg.sender);\n    }\n\n    function changeOperator(address _newOperator) external onlyOperator {\n        _setOperator(_newOperator);\n    }\n\n    function _setOperator(address _operator) internal {\n        operator = _operator;\n        emit LogNewOperator(operator);\n    }\n}\n",
-  "sourcePath": "/Users/ka/Projects/Altoros/graceful-unwind/smart-contracts/contracts/WithOperator.sol",
+  "sourcePath": "/Users/ka/Projects/Altoros/VaultGracefulUnwinding/smart-contracts/contracts/WithOperator.sol",
   "ast": {
-    "absolutePath": "/Users/ka/Projects/Altoros/graceful-unwind/smart-contracts/contracts/WithOperator.sol",
+    "absolutePath": "/Users/ka/Projects/Altoros/VaultGracefulUnwinding/smart-contracts/contracts/WithOperator.sol",
     "exportedSymbols": {
       "WithOperator": [
         1593
@@ -732,7 +732,7 @@
     "src": "0:556:3"
   },
   "legacyAST": {
-    "absolutePath": "/Users/ka/Projects/Altoros/graceful-unwind/smart-contracts/contracts/WithOperator.sol",
+    "absolutePath": "/Users/ka/Projects/Altoros/VaultGracefulUnwinding/smart-contracts/contracts/WithOperator.sol",
     "exportedSymbols": {
       "WithOperator": [
         1593
@@ -1415,7 +1415,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.19",
-  "updatedAt": "2020-02-07T16:52:40.299Z",
+  "updatedAt": "2020-02-11T12:09:35.021Z",
   "devdoc": {
     "methods": {}
   },
